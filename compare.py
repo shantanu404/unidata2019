@@ -11,6 +11,8 @@ def get_result(filename):
       words = line.split(',')
       name = words[1]
       merit = int(words[2])
+      if name in res:
+        res[name] = max(merit, res[name])
       res[name] = merit
   return res
 
