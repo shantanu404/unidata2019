@@ -18,5 +18,9 @@ def result(name, target, other, cutoff):
   except Exception:
     return jsonify({'error': 'Uh oh! Looks like the server crashed. Contact the developers!'}), 500
 
+@app.errorhandler(404)
+def not_found(e):
+  return render_template('404.html')
+
 if __name__ == '__main__':
   app.run(debug=True)
