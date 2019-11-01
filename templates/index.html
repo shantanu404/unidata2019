@@ -22,10 +22,18 @@
     <option>BUET</option>
     <option>KUET</option>
   </select>
+  <label for="other_inst">Other college to compare with</label>
+  <select class="form-control" id="other_inst_input">
+    <option>IUT</option>
+    <option>BUET</option>
+    <option>KUET</option>
+  </select>
+  <label for="cutoff"> The possible cutoff position of other colleges</label>
+  <input class="form-control" type="number" name="cutoff" id="ctf_input">
+  <br>
+  <button id='submit_btn' type="submit" class="btn btn-primary">Submit</button>
 </div>
-<button id='submit_btn' type="submit" class="btn btn-primary">Submit</button>
-</div>
-
+<div id='data'></div>
 <script src="/static/script.js"></script>
 </body>
 </html>

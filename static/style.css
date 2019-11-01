@@ -4,6 +4,21 @@
   width: 95%;
 }
 
+.alert {
+  width: 100%;
+}
+
+#data {
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 95%;
+}
+
+.student {
+  width: 20%;
+  display: inline-flex;
+}
+
 h1 {
   font-family: sans-serif;
 }

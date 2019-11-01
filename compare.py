@@ -27,7 +27,7 @@ def lagging(name, target_inst, other_inst, cutoff=500):
     raise ValueError('{} not in acquired data.'.format(target_inst))
   try:
     target_inst_merit = RESULTS[target_inst][name]
-  except ValueError:
+  except KeyError:
     raise ValueError('{} not found in {}'.format(name, target_inst))
 
   names = []
