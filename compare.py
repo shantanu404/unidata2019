@@ -11,9 +11,12 @@ def get_result(filename):
       words = line.split(',')
       name = words[1]
       merit = int(words[2])
+      # if there are multiple peeps with same name
+      # just get the guy with best grade
       if name in res:
-        res[name] = max(merit, res[name])
-      res[name] = merit
+        res[name] = min(merit, res[name])
+      else:
+        res[name] = merit
   return res
 
 for inst in INSTITUITIONS:
