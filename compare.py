@@ -2,7 +2,7 @@ import os
 import argparse
 
 RESULTS = dict()
-INSTITUITIONS = ['buet', 'iut', 'kuet', 'cuet', 'ruet']
+INSTITUITIONS = ['buet', 'iut', 'kuet', 'cuet', 'ruet', 'iut-admitted']
 
 def get_result(filename):
   res = dict()
