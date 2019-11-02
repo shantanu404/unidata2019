@@ -4,7 +4,7 @@ function handle_error(data) {
   output.innerHTML = '<div class="alert alert-danger">' + error + '</div>';
 }
 
-function get_content(name, inst, other, cutoff, callback) {
+function get_content(merit, inst, other, cutoff, callback) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -14,8 +14,8 @@ function get_content(name, inst, other, cutoff, callback) {
     }
   }
 
-  console.log('GET', '/api/' + name + '/' + inst + '/' + other + '/' + cutoff);
-  xhr.open('GET', '/api/' + name + '/' + inst + '/' + other + '/' + cutoff);
+  console.log('GET', '/api/' + merit + '/' + inst + '/' + other + '/' + cutoff);
+  xhr.open('GET', '/api/' + merit + '/' + inst + '/' + other + '/' + cutoff);
   xhr.send();
 }
 
@@ -23,7 +23,7 @@ function main() {
   var btn = document.getElementById('submit_btn')
   .addEventListener('click', function(e) {
     e.preventDefault();
-    var name = document.getElementById('name_input').value;
+    var merit = document.getElementById('merit_input').value;
 
     var menu = document.getElementById('tgt_inst_input');
     var inst = menu.options[menu.selectedIndex].text.toLowerCase();
@@ -33,7 +33,7 @@ function main() {
 
     var cutoff = document.getElementById('ctf_input').value;
 
-    get_content(name, inst, other, cutoff, function(data) {
+    get_content(merit, inst, other, cutoff, function(data) {
       data = JSON.parse(data).data;
       var output = document.getElementById('data');
       output.innerHTML = '<div class="alert alert-primary" role="alert">'

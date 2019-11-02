@@ -7,14 +7,14 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route('/api/<name>/<target>/<other>/<cutoff>')
-def result(name, target, other, cutoff):
-  name = escape(name)
+@app.route('/api/<merit>/<target>/<other>/<cutoff>')
+def result(merit, target, other, cutoff):
+  merit = escape(merit)
   target = escape(target)
   try:
-    return jsonify({'data': lagging(name, target, other, int(cutoff))})
+    return jsonify({'data': lagging(int(merit), target, other, int(cutoff))})
   except ValueError:
-    return jsonify({'error': 'Invalid `name` or `instituition`'}), 500
+    return jsonify({'error': 'Invalid `roll` or `instituition`'}), 500
   except Exception:
     return jsonify({'error': 'Uh oh! Looks like the server crashed. Contact the developers!'}), 500
 
