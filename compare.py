@@ -2,12 +2,10 @@ import os
 import argparse
 
 RESULTS = dict()
-ROLLS = dict()
-INSTITUITIONS = ['buet', 'iut', 'kuet', 'cuet', 'ruet', 'iut-admitted', 'medical', 'dental']
+INSTITUITIONS = ['buet', 'iut', 'kuet', 'cuet', 'ruet', 'medical', 'dental']
 
-def get_roll_result(filename):
+def get_result(filename):
   res = dict()
-  rolls = dict()
   with open(filename) as f:
     for line in f:
       words = line.split(',')
@@ -18,12 +16,11 @@ def get_roll_result(filename):
         res[name] = min(merit, res[name])
       else:
         res[name] = merit
-      rolls[roll] = name
-  return (rolls, res)
+  return res
 
 for inst in INSTITUITIONS:
   filename = os.path.dirname(os.path.realpath(__file__)) + '/data/{}.csv'
-  ROLLS[inst], RESULTS[inst] = get_roll_result(filename.format(inst))
+  RESULTS[inst] = get_result(filename.format(inst))
 
 def lagging(tgt_merit, target_inst, other_inst, cutoff=500):
   if target_inst not in INSTITUITIONS or other_inst not in INSTITUITIONS:
