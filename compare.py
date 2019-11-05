@@ -2,14 +2,13 @@ import os
 import argparse
 
 RESULTS = dict()
-INSTITUITIONS = ['buet', 'iut', 'kuet', 'cuet', 'ruet', 'medical', 'dental']
+INSTITUITIONS = ['buet', 'iut', 'kuet', 'cuet', 'ruet', 'medical', 'dental', 'sust']
 
 def get_result(filename):
   res = dict()
   with open(filename) as f:
     for line in f:
       words = line.split(',')
-      roll = int(words[0])
       name = words[1]
       merit = int(words[2])
       if name in res:
