@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return render_template('index.html')
+  return render_template('index.html', inst=INSTITUITIONS)
 
 @app.route('/api/<merit>/<target>/<other>/<cutoff>')
 def result(merit, target, other, cutoff):

@@ -2,7 +2,9 @@ import os
 import argparse
 
 RESULTS = dict()
-INSTITUITIONS = ['buet', 'iut', 'kuet', 'cuet', 'ruet', 'medical', 'dental', 'sust']
+INSTITUITIONS = ['buet', 'iut', 'kuet', 'cuet', 'ruet',
+                 'medical', 'dental', 'sust',
+                 'mist-general', 'mist-freedom', 'mist-military', 'mist-tribal']
 
 def get_result(filename):
   res = dict()

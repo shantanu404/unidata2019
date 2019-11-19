@@ -18,25 +18,15 @@
 <div class="form-group">
   <label for="tgt_inst">Your targeted college</label>
   <select class="form-control" id="tgt_inst_input">
-    <option>IUT</option>
-    <option>BUET</option>
-    <option>KUET</option>
-    <option>CUET</option>
-    <option>RUET</option>
-    <option>SUST</option>
-    <option>MEDICAL</option>
-    <option>DENTAL</option>
+    {% for i in inst%}
+      <option>{{ i | upper }}</option>
+    {% endfor %}
   </select>
   <label for="other_inst">Other college to compare with</label>
   <select class="form-control" id="other_inst_input">
-    <option>IUT</option>
-    <option>BUET</option>
-    <option>KUET</option>
-    <option>CUET</option>
-    <option>RUET</option>
-    <option>SUST</option>
-    <option>MEDICAL</option>
-    <option>DENTAL</option>
+    {% for i in inst%}
+      <option>{{ i | upper }}</option>
+    {% endfor %}
   </select>
   <label for="cutoff"> The possible cutoff position of other colleges</label>
   <input class="form-control" type="number" name="cutoff" id="ctf_input">
