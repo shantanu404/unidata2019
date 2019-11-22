@@ -3,7 +3,7 @@ import argparse
 
 RESULTS = dict()
 INSTITUITIONS = ['buet', 'iut', 'kuet', 'cuet', 'ruet',
-                 'medical', 'dental', 'sust',
+                 'medical', 'dental', 'sust', 'butex',
                  'mist-general', 'mist-freedom', 'mist-military', 'mist-tribal']
 
 def get_result(filename):
